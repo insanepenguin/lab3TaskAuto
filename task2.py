@@ -2,8 +2,8 @@ import re
 import sys
 
 
-start: str = "C:\\Users\\EdmondMpc\\PycharmProjects\\lab3TaskAuto\\checklist.txt"
-Check: str = "C:\\Users\\EdmondMpc\\PycharmProjects\\lab3TaskAuto\\md5_new.txt"
+start: str = "C:\\Users\\EdmondMpc\\PycharmProjects\\lab3TaskAuto\\md5_original.txt"
+Check: str = "C:\\Users\\EdmondMpc\\PycharmProjects\\lab3TaskAuto\\md5_new1.txt"
 
 file = open(start, "r")
 pclines = file.readlines()
@@ -24,3 +24,4 @@ for x in pclines:
         changed.append(combo[0])
         name = combo[1].split("/")
         changed.append(name[3].strip())
+print(changed)
