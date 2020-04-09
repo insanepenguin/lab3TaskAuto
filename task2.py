@@ -10,18 +10,22 @@ pclines = file.readlines()
 
 file2 = open(Check, "r")
 checklines = file2.readlines()
-MD5sum = []
-for x in checklines:
-    new = x.split(" ")
-    for x in new:
-       y = x.strip()
-       MD5sum.append(y)
-changed = []
+counter = 0;
+
+notMatched = []
+
 for x in pclines:
-    combo = x.split(" ")
-    combo.remove(combo[1])
-    if(not(combo[0])in MD5sum):
-        changed.append(combo[0])
-        name = combo[1].split("/")
-        changed.append(name[3].strip())
-print(changed)
+    OGsLine = x.split(" ")
+    NWsLine = checklines[counter].split(" ")
+    
+    if(OGsLine[1] != NWsLine[1]):
+        notMatched.append(x.rstrip()+" "+checklines[counter].rstrip())
+    counter = counter + 1
+tracker = 0
+for x in notMatched:
+    original = x.split(" ")
+    
+    output = "{name}: MD5 original = {md5OG}, MD5 new = {md5NW} ".format(name=original[0],md5OG=original[1],md5NW=original[3])
+    
+    print(output)
+    
