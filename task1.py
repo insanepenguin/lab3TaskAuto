@@ -3,7 +3,8 @@
 import re
 import sys
 
-path: str = "C:\\Users\\EdmondMpc\\PycharmProjects\\lab3TaskAuto\\iris_full.txt"
+#path: str = "C:\\Users\\EdmondMpc\\PycharmProjects\\lab3TaskAuto\\iris_full.txt"
+path = sys.argv[1]
 
 
 def lessthan(new, current):

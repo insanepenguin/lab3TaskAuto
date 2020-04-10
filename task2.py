@@ -4,7 +4,7 @@ import sys
 
 start: str = "C:\\Users\\EdmondMpc\\PycharmProjects\\lab3TaskAuto\\md5_original.txt"
 Check: str = "C:\\Users\\EdmondMpc\\PycharmProjects\\lab3TaskAuto\\md5_new1.txt"
-
+#Pass in a diffrent file to write the results too
 file = open(start, "r")
 pclines = file.readlines()
 
@@ -24,8 +24,5 @@ for x in pclines:
 tracker = 0
 for x in notMatched:
     original = x.split(" ")
-    
     output = "{name}: MD5 original = {md5OG}, MD5 new = {md5NW} ".format(name=original[0],md5OG=original[1],md5NW=original[3])
-    
     print(output)
-    
