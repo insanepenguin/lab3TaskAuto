@@ -6,7 +6,7 @@ import sys
 #path: str = "C:\\Users\\EdmondMpc\\PycharmProjects\\lab3TaskAuto\\iris_full.txt"
 path = sys.argv[1]
 
-
+#These additional functions are great for me.
 def lessthan(new, current):
     if (new < current):
         return new
@@ -29,7 +29,7 @@ def read_data(name, lst):
     for x in lines:
         if found:
             lst.append(x)
-        if "@DATA" in x:
+        if "@DATA" in x:#@data only has data after it so just scan the document for that cut off saving some time.
             found = True
     return lst
 
@@ -94,4 +94,3 @@ types = "Types: Iris Setosa = {num_iris_setosa}, Iris Versicolor = {num_iris_ver
 out = Slen + Swid + Plen + Pwid + types
 print(out)
 
-##'Hey {name}, there is a 0x{errno:x} error!'.format(name=name, errno=errno)
